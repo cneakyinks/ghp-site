@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Good Husband Patisserie</title>
+  <meta name="description" content="Browse our cakes, slices and viennoiseries. Reserve your celebration cake fresh across Johor Bahru." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <div class="topbar">Custom Cakes, Delivered Fresh Across Johor Bahru · Reserve in under 2 minutes</div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#about">About Us</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="#" onclick="openContact(); return false;">Contact</a>
+      </nav>
+      <div class="nav__brand">
+        <a href="index.html"><img src="assets/img/logo-dark.png" alt="Good Husband Patisserie" /></a>
+      </div>
+      <div class="nav__right">
+        <a href="faq.html" class="icon-link">FAQ</a>
+        <button class="btn btn-gold nav__cta" onclick="openManyChat()">Reserve via ManyChat</button>
+        <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SHOP HEAD + FILTER PILLS -->
+  <section class="shop-head">
+    <p class="eyebrow reveal">Our collection</p>
+    <h1 class="reveal">Shop</h1>
+    <p class="reveal">Whole cakes, slices &amp; viennoiseries — reserve any for delivery or pickup across Johor Bahru.</p>
+    <div class="shop-toolbar" role="tablist" aria-label="Filter products">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="best">Best Sellers</button>
+      <button class="pill" data-filter="whole">Whole Cakes</button>
+      <button class="pill" data-filter="slices">Slices</button>
+      <button class="pill" data-filter="viennoiseries">Viennoiseries</button>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="shop-grid">
+    <div class="container">
+      <div class="grid" data-stagger>
+
+        <article class="card reveal" data-cat="whole best">
+          <a class="card__img" href="product.html"><img src="assets/img/pistachio.jpg" alt="Pistachio" /></a>
+          <div class="card__body">
+            <span class="card__cat">Whole Cakes · Best Seller</span>
+            <h3>Pistachio</h3>
+            <span class="price">from RM 228</span>
+            <p>Pistachio mousse and praline crunch — our most-reserved cake.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="whole best">
+          <a class="card__img" href="product.html"><img src="assets/img/classic-chocolate.jpg" alt="Classic Chocolate Cake" /></a>
+          <div class="card__body">
+            <span class="card__cat">Whole Cakes · Best Seller</span>
+            <h3>Classic Chocolate Cake</h3>
+            <span class="price">from RM 188</span>
+            <p>Valrhona dark chocolate, layered fresh for celebrations.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="whole">
+          <a class="card__img" href="product.html"><img src="assets/img/pnc.jpg" alt="Praline Noisette Chocolat" /></a>
+          <div class="card__body">
+            <span class="card__cat">Whole Cakes</span>
+            <h3>Praline Noisette Chocolat</h3>
+            <span class="price">RM 198</span>
+            <p>Hazelnut praline and chocolate, an elegant classic.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="whole best">
+          <a class="card__img" href="product.html"><img src="assets/img/blackforest.jpg" alt="Black Forest" /></a>
+          <div class="card__body">
+            <span class="card__cat">Whole Cakes · Best Seller</span>
+            <h3>Black Forest</h3>
+            <span class="price">RM 198</span>
+            <p>Cherry, kirsch cream and dark chocolate sponge.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="whole">
+          <a class="card__img" href="product.html"><img src="assets/img/ujicha.jpg" alt="Ujicha matcha cake" /></a>
+          <div class="card__body">
+            <span class="card__cat">Whole Cakes</span>
+            <h3>Ujicha Matcha</h3>
+            <span class="price">RM 208</span>
+            <p>Uji matcha mousse with a delicate azuki layer.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="slices best">
+          <a class="card__img" href="product.html"><img src="assets/img/penny.jpg" alt="Penny slice" /></a>
+          <div class="card__body">
+            <span class="card__cat">Slices · Best Seller</span>
+            <h3>Penny</h3>
+            <span class="price">RM 22</span>
+            <p>Caramel and chocolate in a single elegant slice.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="slices">
+          <a class="card__img" href="product.html"><img src="assets/img/taro-slice.jpg" alt="Taro Pudding slice" /></a>
+          <div class="card__body">
+            <span class="card__cat">Slices</span>
+            <h3>Taro Pudding Slice</h3>
+            <span class="price">RM 18</span>
+            <p>Silky taro pudding on a light sponge base.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="slices">
+          <a class="card__img" href="product.html"><img src="assets/img/yuzu-slice.jpg" alt="Yuzu Blossom slice" /></a>
+          <div class="card__body">
+            <span class="card__cat">Slices</span>
+            <h3>Yuzu Blossom Slice</h3>
+            <span class="price">RM 20</span>
+            <p>Bright yuzu cream with a floral finish.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-cat="viennoiseries">
+          <a class="card__img" href="product.html"><img src="assets/img/viennoiseries.jpg" alt="Viennoiseries" /></a>
+          <div class="card__body">
+            <span class="card__cat">Viennoiseries</span>
+            <h3>Viennoiseries</h3>
+            <span class="price">from RM 12</span>
+            <p>Buttery, flaky pastries baked fresh each morning.</p>
+            <div class="card__actions">
+              <a class="btn btn-line" href="product.html">View</a>
+              <button class="btn btn-gold" onclick="openManyChat()">Reserve</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: cream → maroon footer -->
+  <div class="wave wave--cream-maroon">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,34 C240,60 480,14 720,32 C960,50 1200,64 1440,34 L1440,64 L0,64 Z"></path></svg>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <img src="assets/img/logo-white.png" alt="Good Husband Patisserie" />
+        <p>Custom celebration cakes, delivered fresh across Johor Bahru.</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#" onclick="openContact(); return false;">Contact Us</a></li>
+          <li><a href="#">Join Our Team</a></li>
+          <li><a href="#">My Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund and Returns Policy</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">Xiaohongshu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">© 2024 The GH Patisserie Sdn. Bhd. 202301047263 (1541177-K)</div>
+  </footer>
+
+  <script src="assets/js/manychat-widget.js"></script>
+  <script src="assets/js/contact-modal.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/scroll-fx.js"></script>
+</body>
+</html>

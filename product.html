@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pistachio — Good Husband Patisserie</title>
+  <meta name="description" content="Reserve the signature Pistachio cake. Choose size, flavour and delivery slot — or reserve on ManyChat in under 2 minutes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <div class="topbar">Custom Cakes, Delivered Fresh Across Johor Bahru · Reserve in under 2 minutes</div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#about">About Us</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="#" onclick="openContact(); return false;">Contact</a>
+      </nav>
+      <div class="nav__brand">
+        <a href="index.html"><img src="assets/img/logo-dark.png" alt="Good Husband Patisserie" /></a>
+      </div>
+      <div class="nav__right">
+        <a href="faq.html" class="icon-link">FAQ</a>
+        <button class="btn btn-gold nav__cta" onclick="openManyChat()">Reserve via ManyChat</button>
+        <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCT DETAIL -->
+  <main class="product">
+    <div class="container">
+      <div class="product__grid">
+        <!-- Gallery -->
+        <div class="gallery reveal reveal--left">
+          <div class="gallery__main"><img src="assets/img/pistachio.jpg" alt="Pistachio cake" /></div>
+          <div class="gallery__thumbs">
+            <img class="active" src="assets/img/pistachio.jpg" alt="Pistachio" />
+            <img src="assets/img/classic-chocolate.jpg" alt="Classic Chocolate" />
+            <img src="assets/img/pnc.jpg" alt="Praline Noisette" />
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="pd reveal reveal--right">
+          <div class="pd__crumbs"><a href="shop.html">Shop</a> · Whole Cakes · Pistachio</div>
+          <h1>Pistachio</h1>
+          <div class="pd__price">RM 228.00</div>
+          <p class="pd__desc">Our signature celebration cake — pistachio mousse, praline crunch and a whisper of rose, finished with the Good Husband ribbon. Made fresh to order for your special day.</p>
+
+          <!-- Existing selectors — kept exactly as they work now -->
+          <div class="field">
+            <label for="size">Size</label>
+            <select id="size">
+              <option>0.5 kg — serves 4–6 (RM 228)</option>
+              <option>1 kg — serves 8–10 (RM 308)</option>
+              <option>1.5 kg — serves 12–15 (RM 368)</option>
+              <option>2 kg — serves 18–20 (RM 428)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="flavour">Flavour</label>
+            <select id="flavour">
+              <option>Pistachio</option>
+              <option>Classic Chocolate</option>
+              <option>Praline Noisette Chocolat</option>
+              <option>Black Forest</option>
+              <option>Ujicha Matcha</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="date">Delivery / pickup date</label>
+            <input type="date" id="date" />
+          </div>
+
+          <div class="field">
+            <label>Delivery time slot</label>
+            <div class="slots">
+              <div class="slot active">10am–12pm</div>
+              <div class="slot">12pm–2pm</div>
+              <div class="slot">2pm–4pm</div>
+              <div class="slot">4pm–6pm</div>
+            </div>
+          </div>
+
+          <!-- Existing Add to Cart + NEW Reserve on ManyChat -->
+          <div class="pd__actions">
+            <button class="btn btn-dark" data-add-cart>Add to Cart</button>
+            <button class="btn btn-gold" onclick="openManyChat()">
+              <svg class="btn-chat-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 20l1.4-4.2A8.5 8.5 0 1 1 21 11.5z"/></svg>
+              Reserve on ManyChat
+            </button>
+          </div>
+          <p class="pd__note">Prefer to chat? <a href="javascript:void(0)" onclick="openManyChat()">Reserve on ManyChat</a> for the same guided flow — size, flavour, date &amp; branch — confirmed in under 2 minutes. Same-day delivery available; ask us to check availability.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- wave: cream → maroon footer -->
+  <div class="wave wave--cream-maroon">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,34 C240,60 480,14 720,32 C960,50 1200,64 1440,34 L1440,64 L0,64 Z"></path></svg>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <img src="assets/img/logo-white.png" alt="Good Husband Patisserie" />
+        <p>Custom celebration cakes, delivered fresh across Johor Bahru.</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#" onclick="openContact(); return false;">Contact Us</a></li>
+          <li><a href="#">Join Our Team</a></li>
+          <li><a href="#">My Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund and Returns Policy</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">Xiaohongshu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">© 2024 The GH Patisserie Sdn. Bhd. 202301047263 (1541177-K)</div>
+  </footer>
+
+  <script src="assets/js/manychat-widget.js"></script>
+  <script src="assets/js/contact-modal.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/scroll-fx.js"></script>
+</body>
+</html>

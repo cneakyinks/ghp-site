@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve Your Celebration — Good Husband Patisserie</title>
+  <meta name="description" content="Custom Cakes, Delivered Fresh Across Johor Bahru. Reserve your celebration cake in under 2 minutes via ManyChat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <div class="topbar">Custom Cakes, Delivered Fresh Across Johor Bahru · Reserve in under 2 minutes</div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About Us</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="#" onclick="openContact(); return false;">Contact</a>
+      </nav>
+      <div class="nav__brand">
+        <a href="index.html"><img src="assets/img/logo-dark.png" alt="Good Husband Patisserie" /></a>
+      </div>
+      <div class="nav__right">
+        <a href="faq.html" class="icon-link">FAQ</a>
+        <!-- Pinned campaign CTA — alongside Shop, does not replace it -->
+        <button class="btn btn-gold nav__cta" onclick="openManyChat()">Reserve via ManyChat</button>
+        <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- drifting bake photos (parallax, behind content) -->
+    <div class="bake-orb" data-parallax="0.10" style="width:240px;height:240px;top:-70px;left:-70px;opacity:.30;"><img src="assets/img/pistachio.jpg" alt="" /></div>
+    <div class="bake-orb" data-parallax="0.20" style="width:150px;height:150px;bottom:-56px;left:-46px;opacity:.16;"><img src="assets/img/pnc.jpg" alt="" /></div>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <h1 class="reveal">Reserve Your<br />Celebration</h1>
+        <p class="hero__sub reveal">Custom Cakes, Delivered Fresh Across Johor Bahru</p>
+        <div class="hero__actions reveal">
+          <button class="btn btn-gold" onclick="openManyChat()">
+            <svg class="btn-chat-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 20l1.4-4.2A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            Reserve via ManyChat
+          </button>
+          <a href="shop.html" class="btn btn-outline">Browse the Shop</a>
+        </div>
+        <div class="hero__trust reveal">
+          <span><b>&lt; 2 min</b> reply time</span>
+          <span><b>Fresh</b> made to order</span>
+          <span><b>Islandwide</b> JB delivery</span>
+        </div>
+      </div>
+      <div class="hero__media reveal reveal--right">
+        <div class="hero__card" data-parallax="0.05">
+          <div class="hero__card__img"><img src="assets/img/classic-chocolate.jpg" alt="Classic Chocolate Cake" /></div>
+          <span class="hero__card__tag">Signature · Pre-order</span>
+          <h3>Classic Chocolate Cake</h3>
+          <p>Valrhona dark chocolate, layered fresh for your celebration.</p>
+          <span class="price">from RM 188</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: hero (cream) → about (sage) -->
+  <div class="wave wave--cream-sage">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,34 C240,60 480,14 720,32 C960,50 1200,64 1440,34 L1440,64 L0,64 Z"></path></svg>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section--sage" id="about">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Pre-order, the effortless way</p>
+        <div class="flourish"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.9H19l-4.3 3.1 1.6 4.9L12 11.9 7.7 15l1.6-4.9L5 7h5.4L12 2z"/></svg></div>
+        <h2>Four taps to a reserved celebration</h2>
+        <p>Skip the forms. Reserve your custom cake through a guided chat — pick size, flavour, date and branch, and our team confirms within two minutes.</p>
+      </div>
+      <div class="steps" data-stagger>
+        <div class="step reveal"><div class="step__num">1</div><h3>Pick a size</h3><p>From 0.5kg to 2kg, sized for your guest list.</p></div>
+        <div class="step reveal"><div class="step__num">2</div><h3>Choose a flavour</h3><p>Signature Verte No.66 and seasonal favourites.</p></div>
+        <div class="step reveal"><div class="step__num">3</div><h3>Set date &amp; branch</h3><p>Delivery or pickup across Johor Bahru.</p></div>
+        <div class="step reveal"><div class="step__num">4</div><h3>We confirm fast</h3><p>A reply in under two minutes, every time.</p></div>
+      </div>
+      <div class="reveal" style="text-align:center; margin-top:40px;">
+        <button class="btn btn-line" onclick="openManyChat()">Reserve via ManyChat</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: about (sage) → masterpieces (cream-deep) -->
+  <div class="wave wave--sage-deep">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,34 C240,60 480,14 720,32 C960,50 1200,64 1440,34 L1440,64 L0,64 Z"></path></svg>
+  </div>
+
+  <!-- OUR MASTERPIECES -->
+  <section class="section tex-dots masterpieces" id="masterpieces">
+    <div class="bake-orb" data-parallax="0.14" style="width:280px;height:280px;top:-80px;right:-70px;opacity:.22;"><img src="assets/img/ujicha.jpg" alt="" /></div>
+    <div class="bake-orb" data-parallax="0.22" style="width:170px;height:170px;bottom:-30px;left:-50px;opacity:.2;"><img src="assets/img/yuzu-slice.jpg" alt="" /></div>
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Signature creations</p>
+        <div class="flourish"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 4.9H19l-4.3 3.1 1.6 4.9L12 11.9 7.7 15l1.6-4.9L5 7h5.4L12 2z"/></svg></div>
+        <h2>Our Masterpieces</h2>
+        <p>Handcrafted for the moments that matter — reserve yours in a two-minute chat.</p>
+      </div>
+
+      <div class="mp-grid" data-stagger>
+        <!-- left -->
+        <div class="mp reveal">
+          <div class="mp__script">&nbsp;</div>
+          <div class="mp__photo"><img src="assets/img/pnc.jpg" alt="Praline Noisette Chocolat" /></div>
+          <h3>Praline Noisette</h3>
+          <p>Hazelnut praline and chocolate, an elegant classic.</p>
+          <span class="price">RM 198</span>
+          <button class="btn btn-line" onclick="openManyChat()">Reserve</button>
+        </div>
+
+        <!-- centre (focus) -->
+        <div class="mp mp--focus reveal">
+          <div class="mp__script">Best Seller</div>
+          <div class="mp__photo"><img src="assets/img/pistachio.jpg" alt="Pistachio celebration cake" /></div>
+          <h3>Pistachio</h3>
+          <p>Pistachio mousse and praline crunch — our most-reserved cake.</p>
+          <span class="price">from RM 228</span>
+          <button class="btn btn-gold" onclick="openManyChat()">Reserve via ManyChat</button>
+        </div>
+
+        <!-- right -->
+        <div class="mp reveal">
+          <div class="mp__script">&nbsp;</div>
+          <div class="mp__photo"><img src="assets/img/blackforest.jpg" alt="Black Forest cake" /></div>
+          <h3>Black Forest</h3>
+          <p>Cherry, kirsch cream and dark chocolate sponge.</p>
+          <span class="price">RM 198</span>
+          <button class="btn btn-line" onclick="openManyChat()">Reserve</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: masterpieces (cream-deep) → band (blush) -->
+  <div class="wave wave--deep-blush">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,34 C240,60 480,14 720,32 C960,50 1200,64 1440,34 L1440,64 L0,64 Z"></path></svg>
+  </div>
+
+  <!-- CAMPAIGN BAND -->
+  <section class="band tex-dots" id="contact">
+    <div class="bake-orb" data-parallax="0.16" style="width:200px;height:200px;top:-40px;left:8%;opacity:.22;"><img src="assets/img/classic-chocolate.jpg" alt="" /></div>
+    <div class="bake-orb" data-parallax="0.24" style="width:150px;height:150px;bottom:-40px;right:10%;opacity:.2;"><img src="assets/img/viennoiseries.jpg" alt="" /></div>
+    <div class="container" data-stagger>
+      <span class="hero__pill reveal" style="margin-bottom:16px;">The sweetest RSVP</span>
+      <h2 class="reveal">Reserve Your Celebration</h2>
+      <p class="reveal">Custom Cakes, Delivered Fresh Across Johor Bahru</p>
+      <button class="btn btn-gold reveal" onclick="openManyChat()">Reserve via ManyChat</button>
+    </div>
+  </section>
+
+  <!-- wave: band (blush) → maroon footer -->
+  <div class="wave wave--blush-maroon">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,34 C240,60 480,14 720,32 C960,50 1200,64 1440,34 L1440,64 L0,64 Z"></path></svg>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__cta">
+      <h3>Have a date in mind?</h3>
+      <p>Lock in your celebration cake in under two minutes.</p>
+      <button class="btn btn-gold" onclick="openManyChat()" style="background:var(--gold-soft); color:var(--chocolate);">Reserve via ManyChat</button>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <img src="assets/img/logo-white.png" alt="Good Husband Patisserie" />
+        <p>Custom celebration cakes, delivered fresh across Johor Bahru.</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#" onclick="openContact(); return false;">Contact Us</a></li>
+          <li><a href="#">Join Our Team</a></li>
+          <li><a href="#">My Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund and Returns Policy</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">Xiaohongshu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">© 2024 The GH Patisserie Sdn. Bhd. 202301047263 (1541177-K)</div>
+  </footer>
+
+  <script src="assets/js/manychat-widget.js"></script>
+  <script src="assets/js/contact-modal.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/scroll-fx.js"></script>
+</body>
+</html>

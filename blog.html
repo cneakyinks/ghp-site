@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Journal — Good Husband Patisserie</title>
+  <meta name="description" content="Stories, seasons and sweet notes from the Good Husband Patisserie kitchen across Johor Bahru." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <div class="topbar">Custom Cakes, Delivered Fresh Across Johor Bahru · Reserve in under 2 minutes</div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#about">About Us</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="#" onclick="openContact(); return false;">Contact</a>
+      </nav>
+      <div class="nav__brand">
+        <a href="index.html"><img src="assets/img/logo-dark.png" alt="Good Husband Patisserie" /></a>
+      </div>
+      <div class="nav__right">
+        <a href="faq.html" class="icon-link">FAQ</a>
+        <button class="btn btn-gold nav__cta" onclick="openManyChat()">Reserve via ManyChat</button>
+        <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <div class="bake-orb" data-parallax="0.14" style="width:220px;height:220px;top:-70px;left:-40px;opacity:.2;"><img src="assets/img/ujicha.jpg" alt="" /></div>
+    <div class="bake-orb" data-parallax="0.2" style="width:150px;height:150px;bottom:-50px;right:-30px;opacity:.18;"><img src="assets/img/pistachio.jpg" alt="" /></div>
+    <div data-stagger style="position:relative;z-index:1;">
+      <p class="eyebrow reveal">The Good Husband Journal</p>
+      <h1 class="reveal">Stories from the Kitchen</h1>
+      <p class="reveal">Seasonal flavours, little rituals and the craft behind every celebration cake we bake across Johor Bahru.</p>
+    </div>
+    <div class="blog-cats">
+      <a data-filter="all" class="active">All</a>
+      <a data-filter="souffle">Soufflé</a>
+      <a data-filter="cherry">Cherry Season</a>
+      <a data-filter="pistachio">Pistachio</a>
+      <a data-filter="ujicha">Uji-Cha</a>
+      <a data-filter="chocolate">Chocolate</a>
+      <a data-filter="petit">Petit Gateaux</a>
+      <a data-filter="cheesecake">Cheesecake</a>
+    </div>
+  </section>
+
+  <!-- BLOG LISTING -->
+  <section class="blog-section">
+    <div class="container">
+
+      <!-- Featured (latest) -->
+      <article class="blog-featured">
+        <div class="blog-featured__media reveal reveal--left">
+          <img src="assets/img/penny.jpg" alt="The Sweetest Pause Before the Holidays Begin" />
+        </div>
+        <div class="blog-featured__copy reveal reveal--right">
+          <p class="blog-featured__cat">Featured · <b>Soufflé</b></p>
+          <h2>The Sweetest Pause Before the Holidays Begin</h2>
+          <p>As the year winds down, we slow the oven and let the season breathe. A cloud-soft soufflé, a warm cup, and a quiet moment before the celebrations begin — here's how we're savouring the pause.</p>
+          <div class="post__meta"><span>Nov 25, 2025</span><span class="dot"></span><span>4 min read</span></div>
+          <a href="#" class="btn btn-line">Read the story</a>
+        </div>
+      </article>
+
+      <!-- Grid of posts -->
+      <div class="blog-grid" data-stagger>
+
+        <article class="post reveal" data-cat="cherry">
+          <div class="post__img"><span class="post__cat">Cherry Season</span><img src="assets/img/blackforest.jpg" alt="From Orchard to Oven" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Oct 2, 2025</span><span class="dot"></span><span>3 min read</span></div>
+            <h3>From Orchard to Oven: Celebrating Cherry Season with Elegance</h3>
+            <p>Peak-season cherries meet kirsch cream and dark sponge — the story behind our most-loved seasonal layer cake.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="pistachio">
+          <div class="post__img"><span class="post__cat">Pistachio</span><img src="assets/img/pistachio.jpg" alt="Why This Dessert Is Your Perfect Post-Monsoon Treat" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Sep 10, 2025</span><span class="dot"></span><span>3 min read</span></div>
+            <h3>Why This Dessert Is Your Perfect Post-Monsoon Treat</h3>
+            <p>Nutty, mellow and never too sweet — why our pistachio creation is the comfort you'll crave once the rains ease.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="ujicha">
+          <div class="post__img"><span class="post__cat">Uji-Cha</span><img src="assets/img/ujicha.jpg" alt="The Dessert That Feels Like a Quiet Walk in Kyoto" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Aug 15, 2025</span><span class="dot"></span><span>4 min read</span></div>
+            <h3>The Dessert That Feels Like a Quiet Walk in Kyoto</h3>
+            <p>Stone-ground Uji matcha, folded into a delicate cream. A single slice, and you're strolling a temple garden.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="chocolate">
+          <div class="post__img"><span class="post__cat">Chocolate</span><img src="assets/img/classic-chocolate.jpg" alt="From Bean to Bliss: It's World Chocolate Day" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Jul 7, 2025</span><span class="dot"></span><span>3 min read</span></div>
+            <h3>From Bean to Bliss: It's World Chocolate Day!</h3>
+            <p>We trace a single-origin bean from harvest to our Valrhona-layered classic — and why good chocolate is worth the wait.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="cherry">
+          <div class="post__img"><span class="post__cat">Cherry Season</span><img src="assets/img/yuzu-slice.jpg" alt="Cherry Cake Obsession" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Jun 5, 2025</span><span class="dot"></span><span>2 min read</span></div>
+            <h3>Cherry Cake Obsession: Why Every Slice Is Summer in a Bite</h3>
+            <p>Bright, jammy and just tart enough. A love letter to the fruit that makes summer taste like celebration.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="petit">
+          <div class="post__img"><span class="post__cat">Petit Gateaux</span><img src="assets/img/viennoiseries.jpg" alt="Small But Mighty: What Makes Petit Gateaux So Special" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>May 29, 2025</span><span class="dot"></span><span>3 min read</span></div>
+            <h3>Small But Mighty: What Makes Petit Gateaux So Special?</h3>
+            <p>Individually finished, endlessly composed — a look at the miniature cakes that carry a full dessert in one bite.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="souffle">
+          <div class="post__img"><span class="post__cat">Soufflé</span><img src="assets/img/pnc.jpg" alt="French Soufflé vs. Japanese Soufflé" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Apr 5, 2025</span><span class="dot"></span><span>4 min read</span></div>
+            <h3>French Soufflé vs. Japanese Soufflé: What's the Difference?</h3>
+            <p>One rises tall and savoury-sweet, the other jiggles like a cloud. We settle the delicious debate, layer by layer.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="cheesecake">
+          <div class="post__img"><span class="post__cat">Cheesecake</span><img src="assets/img/taro-slice.jpg" alt="A Cloud in Every Bite: The Elegance of Double Cheesecake" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Mar 5, 2025</span><span class="dot"></span><span>3 min read</span></div>
+            <h3>A Cloud in Every Bite: The Elegance of Double Cheesecake</h3>
+            <p>Two textures, one slice — baked richness meets airy chilled cream in our quietly showstopping double cheesecake.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+        <article class="post reveal" data-cat="chocolate">
+          <div class="post__img"><span class="post__cat">Chocolate</span><img src="assets/img/classic-chocolate.jpg" alt="Gianduja vs Regular Chocolate: What Sets Them Apart" /></div>
+          <div class="post__body">
+            <div class="post__meta"><span>Feb 3, 2025</span><span class="dot"></span><span>3 min read</span></div>
+            <h3>Gianduja vs Regular Chocolate: What Sets Them Apart?</h3>
+            <p>Add hazelnut, and everything changes. The silky Italian secret behind our most indulgent chocolate creations.</p>
+            <a href="#" class="post__more">Read more →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: cream → maroon footer -->
+  <div class="wave wave--cream-maroon">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,34 C240,60 480,14 720,32 C960,50 1200,64 1440,34 L1440,64 L0,64 Z"></path></svg>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <img src="assets/img/logo-white.png" alt="Good Husband Patisserie" />
+        <p>Custom celebration cakes, delivered fresh across Johor Bahru.</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#" onclick="openContact(); return false;">Contact Us</a></li>
+          <li><a href="#">My Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund and Returns Policy</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">Xiaohongshu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">© 2024 The GH Patisserie Sdn. Bhd. 202301047263 (1541177-K)</div>
+  </footer>
+
+  <script src="assets/js/manychat-widget.js"></script>
+  <script src="assets/js/contact-modal.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/scroll-fx.js"></script>
+</body>
+</html>
