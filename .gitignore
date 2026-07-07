@@ -1,2 +1,5 @@
 .claude/
 .DS_Store
+
+# local full-page render exports (not part of the site)
+assets/screenshots/
