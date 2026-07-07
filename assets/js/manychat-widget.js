@@ -22,7 +22,8 @@
   var TIMES   = ["10am–12pm", "12pm–2pm", "2pm–4pm", "4pm–6pm"];
   var BRANCHES = ["Mount Austin", "Bukit Indah", "Sutera Utama", "Delivery across JB"];
 
-  var order = { size: null, flavour: null, date: null, time: null, branch: null };
+  var order = { items: [], date: null, time: null, branch: null, address: null, notes: null };
+  var pending = {};
   var step = 0;
 
   // --- Icons ---
@@ -33,11 +34,11 @@
   function el(html) { var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; }
 
   var launcher = el(
-    '<div class="mc-launcher" aria-label="Reserve via ManyChat">' +
+    '<div class="mc-launcher" aria-label="Reservations / Enquiries">' +
       '<div class="mc-bubble" role="button" tabindex="0">' +
         '<span class="mc-bubble__pulse"></span>' +
         '<span class="mc-bubble__icon">' + CHAT_ICON + '</span>' +
-        '<span class="mc-bubble__label">Reserve via ManyChat</span>' +
+        '<span class="mc-bubble__label">Reservations / Enquiries</span>' +
       '</div>' +
     '</div>'
   );
@@ -45,7 +46,7 @@
   var panel = el(
     '<div class="mc-panel" role="dialog" aria-label="ManyChat pre-order">' +
       '<div class="mc-head">' +
-        '<div class="mc-head__avatar">' + CAKE_ICON + '</div>' +
+        '<div class="mc-head__avatar"><img src="assets/img/gh-mark.png" alt="Good Husband Patisserie" /></div>' +
         '<div><h4>Good Husband Patisserie</h4><div class="status">Typically replies in under 2 min</div></div>' +
         '<button class="mc-head__close" aria-label="Close chat">&times;</button>' +
       '</div>' +
@@ -91,23 +92,75 @@
   // --- Flow steps ---
   function start() {
     body.innerHTML = ""; quick.innerHTML = "";
-    order = { size: null, flavour: null, date: null, time: null, branch: null }; step = 0;
+    order = { items: [], date: null, time: null, branch: null, address: null, notes: null }; pending = {}; step = 0;
     botSay("Hi! 👋 Welcome to <b>Good Husband Patisserie</b>.", function () {
-      botSay("Let's reserve your celebration cake in under 2 minutes. First — what <b>size</b> would you like?", askSize);
+      botSay("What do you need today?", function () {
+        setQuick([
+          chip("🎂 Reserve a cake", function () { userSay("Reserve a cake"); askReserve(); }),
+          chip("💬 Enquiries", function () { userSay("Enquiries"); askEnquiry(); })
+        ]);
+      });
+    });
+  }
+
+  function askReserve() {
+    botSay("Lovely — let's put your order together. 🎂", askSize);
+  }
+
+  // Free-text enquiry → we reply within 24 hours
+  function askEnquiry() {
+    botSay("Of course — what can we help you with? Share any details (event date, flavours, allergies, budget) and we'll take it from there.", function () {
+      var input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Type your enquiry…";
+      var submit = function () {
+        var v = input.value.trim();
+        if (!v) return;
+        userSay(v); quick.innerHTML = ""; enquiryDone();
+      };
+      input.addEventListener("keypress", function (e) { if (e.key === "Enter") { e.preventDefault(); submit(); } });
+      setQuick([input, chip("Send", submit)]);
+      input.focus();
+    });
+  }
+
+  function enquiryDone() {
+    botSay("Thank you! 💛 We've received your enquiry — our team will get back to you in <b>less than 24 hours</b>.", function () {
+      setQuick([
+        chip("🎂 Reserve a cake", function () { userSay("Reserve a cake"); askReserve(); }),
+        chip("↺ Start over", start)
+      ]);
     });
   }
 
   function askSize() {
-    setQuick(SIZES.map(function (s) {
-      return chip(s, function () { order.size = s; userSay(s); askFlavour(); });
-    }));
+    botSay("What <b>size</b> would you like?", function () {
+      setQuick(SIZES.map(function (s) {
+        return chip(s, function () { pending.size = s; userSay(s); askFlavour(); });
+      }));
+    });
   }
 
   function askFlavour() {
     botSay("Lovely choice. Which <b>flavour</b> are you dreaming of?", function () {
       setQuick(FLAVOURS.map(function (f) {
-        return chip(f, function () { order.flavour = f; userSay(f); askDate(); });
+        return chip(f, function () {
+          pending.flavour = f; userSay(f);
+          order.items.push({ size: pending.size, flavour: pending.flavour });
+          pending = {};
+          afterItem();
+        });
       }));
+    });
+  }
+
+  // After each cake: add another, or move on
+  function afterItem() {
+    botSay("Added to your order. Add another item, or continue?", function () {
+      setQuick([
+        chip("➕ Add another item", function () { userSay("Add another item"); askSize(); }),
+        chip("Continue →", function () { userSay("Continue"); order.date ? confirm() : askDate(); })
+      ]);
     });
   }
 
@@ -132,26 +185,70 @@
   }
 
   function askBranch() {
-    botSay("Last one — which <b>branch</b> (or delivery)?", function () {
+    botSay("Which <b>branch</b> (or delivery)?", function () {
       setQuick(BRANCHES.map(function (b) {
-        return chip(b, function () { order.branch = b; userSay(b); confirm(); });
+        return chip(b, function () { order.branch = b; userSay(b); askAddress(); });
       }));
     });
   }
 
+  // Delivery address — collected because every cake is made to order
+  function askAddress() {
+    botSay("What's the <b>delivery address</b> (or pickup contact)? Each cake is made to order, so this helps us plan.", function () {
+      var input = document.createElement("input");
+      input.type = "text"; input.placeholder = "Address / contact…";
+      input.value = order.address || "";
+      var submit = function () {
+        var v = input.value.trim(); if (!v) return;
+        order.address = v; userSay(v); quick.innerHTML = ""; askNotes();
+      };
+      input.addEventListener("keypress", function (e) { if (e.key === "Enter") { e.preventDefault(); submit(); } });
+      setQuick([input, chip("Send", submit)]);
+      input.focus();
+    });
+  }
+
+  // Free-text notes / customisation (optional)
+  function askNotes() {
+    botSay("Any <b>notes or customisation</b>? Message on the cake, colours, allergies, dietary needs — optional.", function () {
+      var input = document.createElement("input");
+      input.type = "text"; input.placeholder = "Notes / remarks…";
+      input.value = order.notes || "";
+      var submit = function () {
+        order.notes = input.value.trim();
+        if (order.notes) userSay(order.notes);
+        quick.innerHTML = ""; confirm();
+      };
+      input.addEventListener("keypress", function (e) { if (e.key === "Enter") { e.preventDefault(); submit(); } });
+      setQuick([
+        input,
+        chip(order.notes ? "Update note" : "Add note", submit),
+        chip("Skip", function () { quick.innerHTML = ""; confirm(); })
+      ]);
+      input.focus();
+    });
+  }
+
   function confirm() {
+    var itemsRows = order.items.map(function (it, i) {
+      var label = order.items.length > 1 ? "Item " + (i + 1) : "Item";
+      return row(label, it.size + " · " + it.flavour);
+    }).join("");
     var summary =
       '<div class="mc-msg mc-msg--summary">' +
         '<b>Your reservation</b>' +
-        row("Size", order.size) + row("Flavour", order.flavour) +
+        itemsRows +
         row("Date", order.date) + row("Time", order.time) + row("Branch", order.branch) +
+        row("Address", order.address) + row("Notes", order.notes) +
       '</div>';
     botSay("Here's your order summary — does everything look right?", function () {
       body.appendChild(el(summary)); scroll();
       setQuick([
         chip("✅ Confirm & reserve", handoff),
+        chip("➕ Add another item", function () { userSay("Add another item"); askSize(); }),
+        chip("✍️ Add / edit notes", function () { userSay("Add notes"); askNotes(); }),
         chip("↺ Start over", start)
-      ].map(function (b) { return b; }));
+      ]);
     });
   }
 
